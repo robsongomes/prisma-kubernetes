@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prisma
+  labels:
+    app: prisma
+spec:
+  selector:
+    matchLabels:
+      app: prisma
+  template:
+    metadata:
+      labels:
+        app: prisma
+    spec:
+      containers:
+        - name: prisma
+          image: prismagraphql/prisma:1.34
+          ports:
+            - containerPort: 4466
+          envFrom:
+            - configMapRef:
+                name: prisma-config
