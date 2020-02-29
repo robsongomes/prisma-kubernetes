@@ -5,6 +5,6 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_DB: postgresdb
+  POSTGRES_DB: prisma
   POSTGRES_USER: prisma
   POSTGRES_PASSWORD: prisma
